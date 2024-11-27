@@ -1,11 +1,12 @@
+from auto_py_to_exe.config import language_hint
 from opencage.geocoder import OpenCageGeocode
 
 key = 'b73167678a934117b8be7c5b2b6600e0'
 def get_coordinates(city, key):
-    """ Получает координаты города, используя библиотеку OpenCage. """
+
     try:
         geocoder = OpenCageGeocode(key)
-        results = geocoder.geocode(city)
+        results = geocoder.geocode(city, language = 'ru')
 
         if results:
             # Возвращает первый результат
@@ -16,7 +17,7 @@ def get_coordinates(city, key):
         return f"Общая ошибка: {e}"
 
 # Пример использования
-key = '97c595bec990457d975c12c16a4ec4a7'
-city = 'Москва'
+key = 'b73167678a934117b8be7c5b2b6600e0'
+city = 'London'
 coordinates = get_coordinates(city, key)
 print(f"Координаты города {city}: {coordinates}")
