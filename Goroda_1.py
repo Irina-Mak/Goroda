@@ -8,7 +8,7 @@ import requests
 
 
 # Функция для очистки поля ввода
-def show_weather():
+def show_clear():
     entry.delete(0,END)
     label.config(text = "")
     koordinaty.config(text=f"Координаты города :")
@@ -83,11 +83,11 @@ label.pack()
 map_button = Button(text="Показать карту", command=show_map)
 map_button.pack()
 
-# Добавьте кнопку для показа погоды в основной интерфейс
-weather_button = Button(text="Очистить", command=show_weather)
-weather_button.pack()
 
-# Запуск приложения
+clear_button = Button(text="Очистить", command=show_clear)
+clear_button.pack()
+
+
 window.mainloop()
 
 
